@@ -28,7 +28,6 @@ class StgAcidentes(Base):
     __tablename__ = "stg_acidentes"
 
     id = Column(String, primary_key=True)  # ID gerado automaticamente
-    nome_arquivo = Column(String)  # 🔹 Adicionamos a coluna para armazenar o nome do arquivo CSV
     concessionaria = Column(String)
     data = Column(String)
     horario = Column(String)

@@ -47,7 +47,7 @@ def carregar_csv_para_postgres():
 
             # 🔹 Adicionar colunas de ID único e nome do arquivo
             df["id"] = [str(uuid.uuid4()) for _ in range(len(df))]
-            df["nome_arquivo"] = nome_arquivo  # 🔹 Inclui o nome do arquivo no dataframe
+            df["concessionaria"] = nome_arquivo  # 🔹 Insere o nome do arquivo na coluna correta
 
             # Inserir os dados no banco
             df.to_sql("stg_acidentes", engine, if_exists="append", index=False)
