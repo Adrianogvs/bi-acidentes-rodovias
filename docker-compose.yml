@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: acidentes
+    ports:
+      - "5432:5432"
+  airflow:
+    image: puckel/docker-airflow
+    container_name: airflow
+    restart: always
+    ports:
+      - "8080:8080"
+  streamlit:
+    build: ./dashboard
+    container_name: streamlit_app
+    ports:
+      - "8501:8501"
